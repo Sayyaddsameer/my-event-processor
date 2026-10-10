@@ -1,0 +1,16 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+log_cli = true
+log_cli_level = "INFO"
+filterwarnings = [
+    "ignore::DeprecationWarning:botocore.*",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["src/app.py"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
